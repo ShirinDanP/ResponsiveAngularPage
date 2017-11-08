@@ -1,0 +1,77 @@
+<table class="table">
+  <tr *ngIf='data && data.length'>
+    <th>id</th>
+    <th>name</th>
+    <th>userName</th>
+    <th>email</th>
+    <th>address</th>
+    <th>zipCode</th>
+    <th>phone</th>
+    <th>website</th>
+    <th>companyName</th>
+    <th>deleteRow</th>
+  </tr>
+  <tr *ngFor='let aboutData of data'>
+    <th>
+      {{aboutData.id}}
+    </th>
+    <th>
+      {{aboutData.name}}
+    </th>
+    <th>
+      {{aboutData.username}}
+    </th>
+    <th>
+      {{aboutData.email}}
+    </th>
+    <th>
+      {{aboutData.address.street}}, {{aboutData.address.city}}
+    </th>
+    <th>{{aboutData.address.zipcode}}</th>
+    <th>
+      {{aboutData.phone}}
+    </th>
+    <th>
+      {{aboutData.website}}
+    </th>
+    <th>
+      {{aboutData.company.name}}
+    </th>
+    <th><button id='delete'>Delete</button></th>
+
+  </tr>
+  <tr *ngIf='row'></tr>
+  <tr>
+
+    <th>
+      <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+        <input type='text' id=inputRow #inputRow>
+    </th>
+    <th>
+      <button  id='add'>Add</button>
+    </th>
+  </tr>
+</table>
