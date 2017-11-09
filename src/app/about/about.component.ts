@@ -8,17 +8,16 @@ import { InterfaceData } from './../interface-data';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  products: InterfaceData[] = [];
+  data: InterfaceData [];
   row: boolean;
   errorMessage: string;
 
-constructor(private service: MainService) { }
+constructor(private dataService: MainService) {
+ }
 
   ngOnInit(): void {
-    this.service.getProducts()
-            .subscribe (products => {
-                this.products = products;
-            },
-                error => this.errorMessage = <any>error);
-}
+    this.dataService.getAlbums().map(data => {
+      this.data = data;
+    });
+  }
 }

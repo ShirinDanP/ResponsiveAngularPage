@@ -8,11 +8,11 @@ import { InterfaceData } from './../interface-data';
   styleUrls: ['./home-component.component.css']
 })
 export class HomeComponent implements OnInit {
- data: InterfaceData[];
+ data: InterfaceData[]= [];
   constructor(private service: MainService ) { }
 
-  ngOnInit() {
-    this.service.getHomeData().subscribe((data) => {
+  ngOnInit(): void {
+    this.service.getAlbums().subscribe((data) => {
       this.data = data;
     });
   }
